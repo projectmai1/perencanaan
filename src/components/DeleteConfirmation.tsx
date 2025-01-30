@@ -1,4 +1,3 @@
-import React from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -26,8 +25,8 @@ const DeleteConfirmation = ({
   description = "Apakah Anda yakin ingin menghapus data ini? Tindakan ini tidak dapat dibatalkan.",
 }: DeleteConfirmationProps) => {
   return (
-    <AlertDialog open={open}>
-      <AlertDialogContent className="bg-white">
+    <AlertDialog open={open} onOpenChange={onCancel}>
+      <AlertDialogContent className="bg-background">
         <AlertDialogHeader>
           <AlertDialogTitle>{title}</AlertDialogTitle>
           <AlertDialogDescription>{description}</AlertDialogDescription>
@@ -41,7 +40,7 @@ const DeleteConfirmation = ({
           </AlertDialogCancel>
           <AlertDialogAction
             onClick={onConfirm}
-            className="bg-red-600 hover:bg-red-700"
+            className="bg-red-600 hover:bg-red-700 text-white"
           >
             Hapus
           </AlertDialogAction>
